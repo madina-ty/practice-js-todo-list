@@ -1,0 +1,116 @@
+:root{
+    --accent:#EA5959;
+    --bg: #fff;
+    --input-bg:#F3F3F3;
+    --input-cr:#B5B5B5;
+    --text-cr:#5A5A5A;
+    --size-ch-box:28px;
+    --cr:#fff;
+}
+body {
+    font-family: "Lato", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    background-color: var(--accent);
+}
+.todo{
+    padding: 32px;
+    background-color: var(--bg);
+    border: 1px solid transparent;
+    width: 50vw;
+    border-radius: 16px;
+}
+.todo__content {
+
+}
+.todo__title {
+    font-weight: bold;
+    font-size: 31px;
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
+.todo__new {
+    display: flex;
+    align-items: center;
+}
+.todo__new input {
+    width: 678px;
+    height: 47px;
+    border-radius: 14px;
+    border-color: transparent;
+    background-color: var(--input-bg);
+}
+.todo__new input::placeholder {
+        padding: 10px 375px 15px 27px;
+        font-size: 18px;
+        color: var(--input-cr);
+    }
+.todo__ad,
+.todo__delete 
+{
+    margin-left: 16px;
+    font-size: 20px;
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: var(--accent);
+    color: var(--bg);
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.todo__delete {
+    margin-left: auto;
+    margin-right: 0;
+    display: none;
+}
+.todo__task {
+    display: flex;
+    align-items: center;
+    margin: 32px 0 16px 0;
+}
+.todo__task:hover .todo__delete {
+    display: block;
+}
+.todo__task_completed .todo__task-title {
+    text-decoration: line-through;
+}
+.todo__checkbox {
+    margin-right: 18px;
+}
+.todo__checkbox input {
+    display: none;
+}
+.todo__checkbox input:checked + div {
+    background-color: var(--accent);
+}
+.todo__checkbox input:checked + div::after{
+    display: block;
+}
+.todo__checkbox div {
+    height: var(--size-ch-box);
+    width: var(--size-ch-box);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+    color:var(--cr);
+}
+.todo__checkbox div::after {
+    content: '✔';
+    text-align: center;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.todo__task-title {
+    color: var(--text-cr);
+    font-size: 18px;
+}
